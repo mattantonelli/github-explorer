@@ -1,1 +1,26 @@
 @import "bootstrap/scss/bootstrap.scss";
+
+.avatar {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+}
+
+.repo {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.stats > * {
+  margin-right: 1rem;
+}
+
+.language-circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+}
