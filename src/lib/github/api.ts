@@ -36,13 +36,17 @@ export async function getRepos(login: string) : Promise<[Repo]> {
   return await client.query(query, { login: login })
     .toPromise()
     .then(response => {
-      return response.data.user.repositories.nodes.map((repo: any) => {
-        return new Repo(repo);
-      });
+      if (response.error) {
+        return [];
+      } else {
+        return response.data.user.repositories.nodes.map((repo: any) => {
+          return new Repo(repo);
+        });
+      }
     });
 }
 
-export async function getUser(login: string) : Promise<User> {
+export async function getUser(login: string) : Promise<User | null> {
   const query = `
     query User($login: String!) {
       user(login: $login) {
@@ -63,6 +67,10 @@ export async function getUser(login: string) : Promise<User> {
   return await client.query(query, { login: login })
     .toPromise()
     .then(response => {
-      return new User(response.data.user);
+      if (response.error) {
+        return null;
+      } else {
+        return new User(response.data.user);
+      }
     });
 }

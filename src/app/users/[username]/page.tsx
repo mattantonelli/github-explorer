@@ -12,7 +12,6 @@ export default function UserProfile({ params } : UserParams) {
         <User username={params.username} />
       </div>
       <div className="col-9 ps-4">
-        <h3>Popular Repositories</h3>
         <Repos username={params.username} />
       </div>
     </div>
