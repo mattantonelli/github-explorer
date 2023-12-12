@@ -10,6 +10,11 @@ a.link-unstyled {
 }
 
 .avatar {
+  @media (max-width: 576px) {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
   max-width: 300px;
   max-height: 300px;
   border-radius: 50%;

@@ -13,7 +13,7 @@ export default async function User({ username } : { username: string }) {
         <h5 className="mb-0">{user.name}</h5>
         <small>{username}</small>
         <p className="my-2">{user.bio}</p>
-        <div className="d-flex">
+        <div className="d-flex flex-wrap">
           <a href={`${user.url}?tab=followers`} className="link-unstyled" target="_blank">
             <FontAwesomeIcon icon={faUserGroup} /> {user.followers} Followers
           </a>
