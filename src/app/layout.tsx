@@ -7,6 +7,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 import Search from "@/components/search";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} d-flex flex-column`}>
         <div className="container">
           <main>
             <div className="row my-3">
@@ -42,6 +43,14 @@ export default function RootLayout({
             {children}
           </main>
         </div>
+        <footer className="footer mt-auto py-3">
+          <div className="container text-center">
+            <span>Created by Matt Antonelli</span>
+            <a href="https://github.com/mattantonelli/github-explorer" target="_blank" className="m-1">
+              <Image src="/images/github.png" alt="GitHub" width="25" height="25" />
+            </a>
+          </div>
+        </footer>
       </body>
     </html>
   );
